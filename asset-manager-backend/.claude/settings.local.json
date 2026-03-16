@@ -1,0 +1,20 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(pip install:*)",
+      "Bash(alembic init:*)",
+      "Bash(python3 -m pip install --quiet alembic)",
+      "Bash(python3 -m alembic --version)",
+      "Bash(uv --version)",
+      "Bash(python3 -m venv .venv)",
+      "Bash(.venv/bin/pip install:*)",
+      "Bash(.venv/bin/alembic init:*)",
+      "Bash(.venv/bin/python -m alembic revision --autogenerate -m \"initial\")",
+      "WebFetch(domain:docs.powens.com)",
+      "WebFetch(domain:developers.powens.com)",
+      "WebFetch(domain:community.finary.com)",
+      "WebFetch(domain:console.budget-insight.com)",
+      "WebFetch(domain:budget-insight.notion.site)"
+    ]
+  }
+}

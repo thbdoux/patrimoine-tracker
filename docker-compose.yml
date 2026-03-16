@@ -1,0 +1,41 @@
+services:
+  db:
+    image: postgres:16-alpine
+    restart: always
+    environment:
+      POSTGRES_USER: patrimoine
+      POSTGRES_PASSWORD: patrimoine
+      POSTGRES_DB: patrimoine_db
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U patrimoine -d patrimoine_db"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+
+  backend:
+    build: ./asset-manager-backend
+    env_file: ./asset-manager-backend/.env
+    environment:
+      # Écrase DATABASE_URL du .env pour utiliser le hostname Docker interne
+      DATABASE_URL: postgresql+asyncpg://patrimoine:patrimoine@db:5432/patrimoine_db
+    depends_on:
+      db:
+        condition: service_healthy
+    command: sh -c "alembic upgrade head && python -m app.main"
+    restart: always
+    ports:
+      - "8000:8000"
+
+  frontend:
+    build:
+      context: ./asset-manager-frontend-react
+    ports:
+      - "3000:80"
+    depends_on:
+      - backend
+    restart: always
+
+volumes:
+  pgdata:

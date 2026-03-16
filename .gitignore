@@ -1,0 +1,64 @@
+# ========================
+# Python / Backend
+# ========================
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.so
+*.egg
+*.egg-info/
+dist/
+build/
+.eggs/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+coverage.xml
+htmlcov/
+.tox/
+.venv/
+venv/
+env/
+
+# ========================
+# Node / Frontend
+# ========================
+node_modules/
+dist/
+.cache/
+*.tsbuildinfo
+.env.local
+
+# ========================
+# Environment & Secrets
+# ========================
+.env
+.env.*
+!.env.example
+
+# ========================
+# Docker
+# ========================
+*.log
+
+# ========================
+# OS
+# ========================
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# ========================
+# Claude Code
+# ========================
+.claude/
+
+# ========================
+# IDE
+# ========================
+.idea/
+.vscode/
+*.swp
+*.swo

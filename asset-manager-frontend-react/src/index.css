@@ -1,0 +1,56 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --color-bg: #0d0f14;
+  --color-surface: #141720;
+  --color-elevated: #1c2030;
+  --color-border: #252a38;
+  --color-overlay: #2a3045;
+
+  --color-text-primary: #f0f2f8;
+  --color-text-secondary: #8892a4;
+  --color-text-muted: #4d5669;
+
+  --color-accent: #5b6ef5;
+  --color-accent-alt: #7c3aed;
+  --color-positive: #10b981;
+  --color-negative: #ef4444;
+  --color-warning: #f59e0b;
+  --color-info: #38bdf8;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background-color: var(--color-bg);
+  color: var(--color-text-primary);
+  font-family: "Inter", system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: var(--color-bg);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-border);
+  border-radius: 999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-elevated);
+}
+
+/* Tabular numbers for financial data */
+.tabular {
+  font-variant-numeric: tabular-nums;
+}
