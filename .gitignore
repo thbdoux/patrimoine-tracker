@@ -37,6 +37,9 @@ dist/
 .env
 .env.*
 !.env.example
+# Clés privées (clé RSA Enable Banking, etc.)
+*.pem
+*.key
 
 # ========================
 # Docker
